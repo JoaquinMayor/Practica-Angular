@@ -1,7 +1,12 @@
 <h1>Listado de Personas</h1>
 <button [disabled] = desabilitar (click)="agregarPersona()">Agregar Persona</button> <!--Con los [] asocia al elemento con un caracteristica del ts-->
 <!--Para cacturar un evento en angular no es con el on sino por ejemplo click y tiene que estar entre parentesis-->
-<p>{{mensaje}}</p>
+<p *ngIf="mostrar; else sinPersona">{{mensaje}} con el título de {{titulo}}</p> <!--el mensaje se mostrara si mostrar es verdadero, por el *ngIf-->
+<!--Con el else se le pone un identificador para que aparezca otra cosa con ese identificador con #, dentro del nd-template-->
+<ng-template #sinPersona>
+    <p>No se ha agregado ninguna persona</p>
+</ng-template>
+
 <app-persona></app-persona>
 
 <label>Título Persona</label>

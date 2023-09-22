@@ -4,7 +4,7 @@ Luego y
 n
 css
 
-ng serve -o abrir sewrvidor
+ng serve -o abrir servidor
 
 con ctrl c : cierra server (en el cmd)
 

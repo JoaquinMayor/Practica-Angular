@@ -9,10 +9,11 @@ export class PersonasComponent{ //Se debe registrar en el archivo de app.modules
     desabilitar = false;
     mensaje = "No se ha agregado ninguna persona";
     titulo = "Cadena vacia"
+    mostrar = false;
     
     agregarPersona(){
         this.mensaje ="Persona agregada";
-
+        this.mostrar = true;
     }
 
     modificarTitulo(event:Event){

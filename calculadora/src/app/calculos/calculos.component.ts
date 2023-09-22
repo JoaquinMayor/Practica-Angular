@@ -11,7 +11,7 @@ export class CalculosComponent {
   num2:number = 0;
   resultado:number = 0;
 
-  sumar(){
+  sumar():void{
     this.resultado = this.num1 + this.num2;
   }
 
