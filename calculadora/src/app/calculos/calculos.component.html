@@ -1,0 +1,21 @@
+<section class="form">
+    <form>
+        <fieldset>
+        <legend>Aplicación de Calculadora</legend>
+                
+            <label  for="operando1">Operando A</label>
+            <input type="number" name="operando1" placeholder="Primer Operando" [(ngModel)]= "num1">
+            
+        
+            <label for="operando2">Opertando B</label>
+            <input type="number" name="operando2" placeholder="Segundo Operando" [(ngModel)]= "num2" >
+       
+        
+        <button (click)="sumar()">Sumar</button>
+        
+        <p>Resultado: {{resultado}}</p>
+    </fieldset>
+    </form>
+</section>
+
+

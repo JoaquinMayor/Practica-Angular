@@ -1,0 +1,13 @@
+<h1>Listado de Personas</h1>
+<button [disabled] = desabilitar (click)="agregarPersona()">Agregar Persona</button> <!--Con los [] asocia al elemento con un caracteristica del ts-->
+<!--Para cacturar un evento en angular no es con el on sino por ejemplo click y tiene que estar entre parentesis-->
+<p>{{mensaje}}</p>
+<app-persona></app-persona>
+
+<label>Título Persona</label>
+<input type="text" (input)="modificarTitulo($event)"> <!--Variables se les pasa con $-->
+<p>{{titulo}}</p>
+
+<input type="text" [(ngModel)]="titulo"> <!--[(ngModel)] es la propiedad necesaria para trabajar two way binding, hace que se modifique si ya esta precodificado y vicebersa-->
+<p>{{titulo}}</p>
+

@@ -1,0 +1,46 @@
+desde el cmd como admin vamos a la carpeta y escribimos:
+ng new nombre
+Luego y
+n
+css
+
+ng serve -o abrir sewrvidor
+
+con ctrl c : cierra server (en el cmd)
+
+npm install : estala la carpeta node_modules, en caso de que no se encuentren
+
+
+En typescript para ejecutar un documento primero se compila en la terminal con tsc nombre archivo
+
+Se debe indicar a la id que se trabaja con un proyecto de typescript con tsc -init 
+crea un json con  opciones
+
+observar cambios en los archivos y actualizar tsc -w
+
+
+Para ejecutar los modulos del script se necesita los web packs mediante:
+npm install webpack webpack-cli webpack-dev-serve
+compacta y crea un servidor
+
+e instalar el typesecrip loader:
+npm install typescript ts-loader --save-dev
+
+y generar el package.json: 
+npm init -y
+
+en ese archivo agregar al final
+"script":{
+    "start": "webpack-dev-serve --mode development"
+  }
+^
+|
+para iniciar el server en desarrollo
+
+
+
+CREAR COMPONENT Y MODULOS EN ANGULAR
+
+ng generate component persona :crea componentes o se puede poner : ng c g persona
+
+instalar bootstrap en los modulos : npm install bootstrap --save

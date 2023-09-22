@@ -1,0 +1,10 @@
+<p>Nombre: {{nombre}}
+    Apellido: {{apellido}}
+    Edad: {{getEdad}}
+</p>
+
+<div (keyup)="0"> <!--Evento al precionar un tecla-->
+    <label>Repetidor:</label>
+    <input type="text" #entrada /> <!--Se le asocia un nombre al elemento imput para asociarlo abajo-->
+    {{entrada.value}}
+</div>
