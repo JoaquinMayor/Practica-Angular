@@ -1,1 +1,6 @@
-<app-calculos></app-calculos>
+
+<div>
+    <app-calculo (resultadoSuma)="procesarResultado($event)"></app-calculo>
+
+    <app-resultado [resultado] = "resultado"></app-resultado>
+</div>

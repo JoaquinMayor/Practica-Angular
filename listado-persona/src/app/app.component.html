@@ -1,18 +1,12 @@
 <h3>{{title}}</h3>
 <hr>
-<form>
-  <fieldset>
 
-    <label for="nombre">Nombre: </label>
-    <input type="text" placeholder="Ingrese el Nombre" name="nombre" id="nombre" [(ngModel)] = "nombreInput">
+<app-formulario (personaCreada)="personaAgregada($event)"></app-formulario> <!--Se acalara entre () el elemento pasado por el hijo y luego a que funcion se le quiere pasar-->
 
-    <label for="Apellido">Apellido: </label>
-    <input type="text" placeholder="Ingrese el Apellido" name="apellido" id="apellido" [(ngModel)] = "apellidoInput">
-  </fieldset>
-  <button class="boton" (click)="agregarPersona()">Agregar Persona</button>
-</form>
+<app-persona *ngFor="let persona of personas; let i = index" [persona]="persona" [i]="i"> <!--Con el [persona], se le pasa los elementos al componente hijo, en este caso persona-->
 
+</app-persona>
 
-<div *ngFor="let persona of personas; let i = index"> <!--con el *ngFor se puede recorrer y mostrar arreglos, y se puede poner de forma opcional el i de indice -->
-  {{i+1}}:{{persona.nombre}} {{persona.apellido}}
-</div>
+<!--<div *ngFor="let persona of personas; let i = index"> --> <!--con el *ngFor se puede recorrer y mostrar arreglos, y se puede poner de forma opcional el i de indice -->
+ <!--{{i+1}}:{{persona.nombre}} {{persona.apellido}}
+</div>--> 
