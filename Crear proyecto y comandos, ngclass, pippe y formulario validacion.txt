@@ -44,3 +44,31 @@ CREAR COMPONENT Y MODULOS EN ANGULAR
 ng generate component persona :crea componentes o se puede poner : ng c g persona
 
 instalar bootstrap en los modulos : npm install bootstrap --save
+
+
+
+
+
+
+NGCLASS = agrega una clase si se cumple una condicion ejemplo
+
+[ngClass] = "{redfocus: tipo === "egreso"}"
+
+
+PIPES
+buscar en la pagina de angular si necesito modificar un formato o icono en el html
+ya que da muchas formas y modelos personalizables.
+dentro del html con el dato poner | (lo que diga la pagina de angular)
+
+
+VALIDAR FORMULARIOS DATOS
+
+Poner required en los datos
+El boton tiene que ser del tipo submit
+En la etiqueta form poner <form (ngSubmit) = "f.form.valid && funcion al apretar el boton" #f="ngForm">
+
+
+
+
+CREACION DE CARPETA ROUTING EN CASO DE QUE NO SE TENGA
+ ng g module app-routing //sirve para la navegacion en distintas paginas

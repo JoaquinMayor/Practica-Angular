@@ -1,0 +1,8 @@
+<div class="item"> <!--con el *ngFor se puede recorrer y mostrar arreglos, y se puede poner de forma opcional el i de indice -->
+  <ul>
+    <li>
+      <a [routerLink]="['/personas', i]" [queryParams]="{modoEdicion:'1'}"> {{i+1}}:{{persona.nombre}} {{persona.apellido}}</a><!--Navegar entre paginas con routerLink-->
+      <!--El queryParams sirve para mandar datos a un lado, en este caso va a formulario, donde se va a guardar en una variable-->
+    </li>
+  </ul>  
+  </div>

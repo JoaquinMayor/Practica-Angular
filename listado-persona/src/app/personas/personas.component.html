@@ -1,0 +1,12 @@
+<div style="text-align: center;">
+    <button style="cursor: pointer;" (click)="agregar()">+</button>
+</div>
+
+<div class="box">
+
+    <app-persona *ngFor="let persona of personas; let i = index" [persona]="persona" [i]="i"></app-persona> <!--Con el [persona], se le pasa los elementos al componente hijo, en este caso persona-->
+</div>
+
+<div class="box">
+    <app-formulario (personaCreada)="personaAgregada($event)"></app-formulario> <!--Se acalara entre () el elemento pasado por el hijo y luego a que funcion se le quiere pasar-->
+</div>

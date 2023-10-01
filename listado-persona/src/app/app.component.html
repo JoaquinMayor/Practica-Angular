@@ -1,12 +1,17 @@
-<h3>{{title}}</h3>
-<hr>
+<div class="box" id="heading">
 
-<app-formulario (personaCreada)="personaAgregada($event)"></app-formulario> <!--Se acalara entre () el elemento pasado por el hijo y luego a que funcion se le quiere pasar-->
+    <h1>{{title}}</h1>
 
-<app-persona *ngFor="let persona of personas; let i = index" [persona]="persona" [i]="i"> <!--Con el [persona], se le pasa los elementos al componente hijo, en este caso persona-->
+</div>
 
-</app-persona>
+
+<router-outlet> <!--especifica que se quiere mostrar todo lo establecido en el routing -->
+
+
+
+
 
 <!--<div *ngFor="let persona of personas; let i = index"> --> <!--con el *ngFor se puede recorrer y mostrar arreglos, y se puede poner de forma opcional el i de indice -->
  <!--{{i+1}}:{{persona.nombre}} {{persona.apellido}}
 </div>--> 
+
