@@ -3,6 +3,7 @@ import { Persona } from '../persona.model';
 import { PersonasService } from '../personas.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-personas',
   templateUrl: './personas.component.html',
@@ -16,7 +17,16 @@ export class PersonasComponent  implements OnInit{
 
   }
   ngOnInit(): void {
-    this.personas = this.personaService.personas; //Se lo esta inicializando con la lista de personas de personaService
+    //this.personas = this.personaService.personas; Se lo esta inicializando con la lista de personas de personaService
+    this.personaService.obtenerPersonas()
+    .subscribe(
+      res => {
+        this.personas = <Persona[]>res;
+        this.personaService.setPersonas(<Persona[]>res);
+      },
+      error => console.error(error)
+      
+    );
   }
   
   personaAgregada(persona:Persona){

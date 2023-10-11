@@ -23,7 +23,7 @@ export class FormularioComponent implements OnInit{
   }
   ngOnInit(): void {
     this.index = this.route.snapshot.params["id"]; //Recupera el id del html de persona, que se definio en el routing module en el ultimo path
-    //Lo reconoce porque en el routing.modjule se encuentra enlazado y toma id porque ese es el nombre que tomamos
+    //Lo reconoce porque en el routing.module se encuentra enlazado y toma id porque ese es el nombre que tomamos
 
     this.modoEdicion = +this.route.snapshot.queryParams['modoEdicion']; //El + del principio convierte de string a entero
     if(this.index /*this.modoEdicion != null && this.modoEdicion === 1 */){

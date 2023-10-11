@@ -8,6 +8,10 @@ import { PersonaComponent } from './personas/persona/persona.component';
 import { FormularioComponent } from './personas/formulario/formulario.component';
 import { PersonasComponent } from './personas/personas.component';
 import { ErrorComponent } from './error/error.component';
+import { HttpClientModule } from '@angular/common/http';
+import { LogginfService } from './LoggingService.service';
+import { PersonasService } from './personas.service';
+import { DataServices } from './data.service';
 
 @NgModule({
   declarations: [
@@ -20,9 +24,10 @@ import { ErrorComponent } from './error/error.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [LogginfService,PersonasService, DataServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
