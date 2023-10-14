@@ -1,20 +1,23 @@
 import { HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Persona } from './persona.model';
+import { LoginService } from './login/login.service';
 
 @Injectable()
 export class DataServices{ //Juntar datos de la base de datos firebase 
-    constructor(private httpClient: HttpClient){ //la clase httpClient ayuda a vincular con la base de datos
+    constructor(private httpClient: HttpClient, private loginService:LoginService){ //la clase httpClient ayuda a vincular con la base de datos
 
     }
 
     cargarPersonas(){ //juntar los datos de la  base de datos
-        return this.httpClient.get('https://personas-6d43c-default-rtdb.firebaseio.com/datos.json');
+        const token = this.loginService.getIdToken(); //se necesita hacer el token pára autentificar el dato y se le adjunta como una query parameter a la url desde ?
+        return this.httpClient.get('https://personas-6d43c-default-rtdb.firebaseio.com/datos.json?auth='+token);
     }
 
     //Guardar personas
     guardarPersonas(personas:Persona[]){
-        this.httpClient.put('https://personas-6d43c-default-rtdb.firebaseio.com/datos.json', personas)
+        const token = this.loginService.getIdToken();
+        this.httpClient.put('https://personas-6d43c-default-rtdb.firebaseio.com/datos.json?auth='+token, personas)
         .subscribe(
             response =>{
                 console.log("resultado guardar Personas" + response);
@@ -26,8 +29,9 @@ export class DataServices{ //Juntar datos de la base de datos firebase
     }
 
     modificarPersona(index:number, persona:Persona){
+        const token = this.loginService.getIdToken();
         let url:string;
-        url = 'https://personas-6d43c-default-rtdb.firebaseio.com/datos/'+index+'.json';
+        url = 'https://personas-6d43c-default-rtdb.firebaseio.com/datos/'+index+'.json?auth='+token;
         this.httpClient.put(url, persona).subscribe(
             response=> {console.log("Resultado modificar Persona: "+response);},
             error =>{console.log("Error en modificar Persona: "+ error)}
@@ -35,8 +39,9 @@ export class DataServices{ //Juntar datos de la base de datos firebase
     }
 
     eliminarPersona(index:number){
+        const token = this.loginService.getIdToken();
         let url:string;
-        url = 'https://personas-6d43c-default-rtdb.firebaseio.com/datos/'+index+'.json';
+        url = 'https://personas-6d43c-default-rtdb.firebaseio.com/datos/'+index+'.json?auth='+token;
         this.httpClient.delete(url).subscribe(
             response=> {console.log("Resultado eliminar Persona: "+response);},
             error =>{console.log("Error en eliminar Persona: "+ error)}

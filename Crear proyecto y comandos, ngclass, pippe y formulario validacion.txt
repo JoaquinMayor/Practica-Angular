@@ -72,3 +72,9 @@ En la etiqueta form poner <form (ngSubmit) = "f.form.valid && funcion al apretar
 
 CREACION DE CARPETA ROUTING EN CASO DE QUE NO SE TENGA
  ng g module app-routing //sirve para la navegacion en distintas paginas
+
+
+
+DESPLEGAR EL PROYECTO A PRODUCCION PARA SERVIDOR
+si se despliega a nivel raiz es con ng build --prod --aot
+si es a nivel carpeta es ng build --prod --aout --base-href /nombre de la carpeta/

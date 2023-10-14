@@ -12,6 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { LogginfService } from './LoggingService.service';
 import { PersonasService } from './personas.service';
 import { DataServices } from './data.service';
+import { LoginComponent } from './login/login.component';
+import { LoginService } from './login/login.service';
+import { LoginGuardian } from './login/login-guardian.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,8 @@ import { DataServices } from './data.service';
     PersonaComponent,
     FormularioComponent,
     PersonasComponent,
-    ErrorComponent
+    ErrorComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +31,7 @@ import { DataServices } from './data.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [LogginfService,PersonasService, DataServices],
+  providers: [LogginfService,PersonasService, DataServices, LoginService,LoginGuardian],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
